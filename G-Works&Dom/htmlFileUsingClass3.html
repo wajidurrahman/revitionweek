@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Elements</title>
+    <style>
+        article{
+            border: 2px solid tomato;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h3 id="first">Explore DOM</h3>
+            <p>This is first paragraph .</p>
+            <p>This is second paragraph .</p>
+        </section>
+        <section>
+         <article>
+             <h3>article-1</h3>
+             <p title="I am the most important author" id="bestSeller" class="author">author-1</p>
+             <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta doloribus accusamus enim consequuntur sed velit consectetur. Nobis corporis quo blanditiis, asperiores ducimus facilis distinctio totam culpa sint modi, voluptatibus quos?</p>
+         </article>
+         <article>
+             <h3>article-2</h3>
+             <p class="author">author-2</p>
+             <p class="description">Debitis, dicta laudantium id dolore numquam, dolor laborum voluptates vel reprehenderit ullam atque sequi quo sint nostrum ut dolorem, nesciunt ipsum provident placeat delectus ab earum. Earum dolores qui iure.</p>
+         </article>
+         <article>
+             <h3>article-3</h3>
+             <p class="author">author-3</p>
+             <p class="description">Sed voluptas saepe omnis impedit corporis itaque aspernatur accusamus optio ratione eaque animi, consequuntur accusantium id beatae tenetur placeat provident quod, numquam reprehenderit qui? Consectetur itaque architecto voluptates ipsam reprehenderit?</p>
+         </article>
+        </section>
+    </main>
+    <script>
+       document.body.style.backgroundColor = 'tomato';
+
+        var first = document.getElementById("first");
+        first.style.color = 'green';
+        first.style.backgroundColor ='yellow';
+        first.style.fontSize = '30px';
+
+        var authors = document.getElementsByClassName('author');
+        for (let i = 0; i < authors.length; i++) {
+            const element = authors[i];
+            console.log(element.innerHTML);
+            element.innerHTML = 'Lekhok-' + (i+1);
+            element.style.backgroundColor = 'lightblue';
+            element.style.margin = '10px';
+        }
+        document.getElementById('bestSeller').setAttribute("title",'give me your autograph');
+    </script>
+</body>
+</html>
