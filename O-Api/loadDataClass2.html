@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JSON:- JavaScript Object Notation</h1>
+    <ul id="users-container">
+
+    </ul>
+    <script>
+        // step 1...
+        // fetch('https://jsonplaceholder.typicode.com/todos/1')
+        //     .then(response => response.json())
+        //     .then(json => console.log(json))
+
+        // step 2...
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(response => response.json())
+        //     .then(json => displayUsers(json))
+
+        // function displayUsers(users) {
+        //     console.log("users", users);   
+        // }
+
+        // step 3...
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(response => response.json())
+        //     .then(json => displayUsers(json))
+
+        // function displayUsers(users) {
+        //     const usersNames = users.map(user => user.username);
+        //     console.log(usersNames);    
+        // }
+
+        // step 4...
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => displayUsers(json))
+
+        function displayUsers(users) {
+            const usersNames = users.map(user => user.username);
+            const ul = document.getElementById("users-container");
+
+            for (let i = 0; i < usersNames.length; i++) {
+                const user = usersNames[i];
+                const li = document.createElement('li');
+                li.innerText = user;
+                ul.appendChild(li);
+            }    
+        }
+    </script>
+</body>
+
+</html>
